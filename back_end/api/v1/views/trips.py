@@ -4,7 +4,7 @@ from models.station import Station
 from models.bike_station import BikeStation
 from models import storage
 from api.v1.views import app_views
-from flask import abort, jsonify, request, session
+from flask import abort, jsonify, request, session, make_response
 from flasgger.utils import swag_from
 from datetime import datetime
 
@@ -23,6 +23,7 @@ def start_trip():
         destination_docking_station (str): The name of the station
 
     """
+
     if not request.get_json():
         abort(400, description="Not a JSON")
 
@@ -126,7 +127,9 @@ def end_trip():
         # save bike station object
         new_bike_station.save()
 
-    return jsonify({
+    response = jsonify({
         "trip_details": current_trip.to_dict(),
         "message": "Trip ended successfully"
     }), 200
+    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
+    return response, 201

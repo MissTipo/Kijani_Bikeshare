@@ -32,6 +32,7 @@
 .imgdiv {
   padding: 50px 0;
   text-align: center;
+  border-radius: 4;
 }
 
 .btn {
