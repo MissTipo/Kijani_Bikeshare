@@ -9,8 +9,7 @@ export default function NewMap() {
   const [lngs, setLngs] = useState(0);
 
   const { isLoaded } = useLoadScript({
-    // googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
-    googleMapsApiKey: process.env.GOOGLE_API_KEY,
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
   });
 
   // set position to current location
