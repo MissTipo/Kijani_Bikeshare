@@ -8,10 +8,10 @@ import { useContext } from "react";
 import StartContext from "../context/StartContext";
 
 export const SelectBike = () => {
-  const { start } = useContext(StartContext);
+  const { trip } = useContext(StartContext);
   return (
     <div className={classes.container}>
-      <h1>Available Bikes at {start}</h1>
+      <h1>Available Bikes at {trip.start}</h1>
       <div className="bike-selection">
         <div className="bike-selection__item">
           <img

@@ -34,9 +34,6 @@ function LoginForm() {
       email: email,
       password: password,
     };
-    console.log("before");
-    // const { setUser } = useContext(UserContext);
-    console.log("after");
 
     const valid1 = email.length > 0;
     const valid2 = password.length > 0;
@@ -53,13 +50,13 @@ function LoginForm() {
         },
       });
 
-      setLoginResponse(response.data);
+      setLoginResponse(response.status);
       // Get the response data
       setSuccess(true);
       console.log(response.data);
       console.log("Success");
       setUser(response.data);
-      console.log(user);
+
       // console.log(user);
     } catch (err) {
       if (!err.response) {

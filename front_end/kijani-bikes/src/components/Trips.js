@@ -1,6 +1,6 @@
-import React from "react";
-import Footer from "./layout/Footer";
+// Component for trip details
 
+import React from "react";
 export const Trips = () => {
   return (
     <div className="events">
