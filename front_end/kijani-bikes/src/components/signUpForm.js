@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import classes from "./loginForm.module.css";
 import axios from "../api/axios";
+import "./SignUpForm.css";
 
 const pwdRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
@@ -125,8 +126,8 @@ function SignupForm() {
       if (!err.response) {
         setErreMsg("Network Error");
         return;
-      } else if (err.response.status === 401) {
-        setErreMsg("Invalid credentials");
+      } else if (err.response.status === 409) {
+        setErreMsg("User already exists");
         return;
       } else {
         setErreMsg("Registration Error");

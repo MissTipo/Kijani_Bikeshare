@@ -1,0 +1,7 @@
+/* Styling for SignupForm  */
+
+.errMsg {
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+}

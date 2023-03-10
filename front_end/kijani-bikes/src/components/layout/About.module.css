@@ -13,8 +13,23 @@
 }
 .section h2 {
   text-align: center;
+  color: #376e2d;
+  font-size: 1.5rem;
 }
 
 .section p {
   text-align: center;
+  color: white;
+}
+
+.section button {
+  margin: 20px auto;
+  width: 180px;
+  padding: 10px 20px;
+  background-color: #376e2d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
