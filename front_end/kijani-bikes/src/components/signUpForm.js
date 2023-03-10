@@ -25,6 +25,7 @@ function SignupForm() {
 
   const [password, setPassword] = useState("");
   const [validPassword, setValidPassword] = useState(false);
+  const [focus, setFocus] = useState(false);
 
   const [matchPassword, setMatchPassword] = useState("");
   const [validMatch, setValidMatch] = useState(false);
@@ -80,8 +81,33 @@ function SignupForm() {
     }
   }, [email]);
 
+  // check for password focus input
+  useEffect(() => {
+    if (password.length > 0) {
+      setFocus(true);
+    } else {
+      setFocus(false);
+    }
+  }, [password]);
+
   // Check for password valid input
   useEffect(() => {
+    //   if (password.length > 0) {
+    //     if (pwdRegex.test(password)) {
+    //       setValidPassword(true);
+    //     } else {
+    //       setValidPassword(false);
+    //     }
+    //     if (password === matchPassword) {
+    //       setValidMatch(true);
+    //     } else {
+    //       setValidMatch(false);
+    //     }
+    //   } else {
+    //     setValidPassword(false);
+    //   }
+    // }, [password, matchPassword]);
+
     const result = pwdRegex.test(password);
     setValidPassword(result);
     const match = password === matchPassword;
@@ -206,14 +232,22 @@ function SignupForm() {
                 type="password"
                 id="password"
                 autoComplete="off"
+                onFocus={() => setFocus(true)}
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 required
               />
-              <p className={validPassword ? "offscreen" : "errMsg"}>
-                Password must be at least 8 characters long and contain at least
-                one uppercase letter, one lowercase letter, and one number.
+              {/* <p className={focus ? "offscreen" : "errMsg"}> */}
+              <p
+                className={
+                  focus ? (validPassword ? "offscreen" : "errMsg") : "offscreen"
+                }
+              >
+                Password must be at least 8 characters long and contain
+                <br />
+                at least one uppercase letter, one lowercase letter, <br />
+                and one number;
               </p>
             </label>
             <label htmlFor="matchPassword">
