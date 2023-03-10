@@ -25,7 +25,6 @@ function LoginForm() {
     setErrMsg("");
   }, [email, password]);
 
-  const [loginResponse, setLoginResponse] = useState("");
   const { user, setUser } = useContext(UserContext);
 
   const HandleSubmit = async (e) => {
@@ -50,10 +49,9 @@ function LoginForm() {
         },
       });
 
-      setLoginResponse(response.status);
       // Get the response data
       setSuccess(true);
-      console.log(response.data);
+      console.log(response.status);
       console.log("Success");
       setUser(response.data);
 
@@ -79,7 +77,7 @@ function LoginForm() {
           <h2>Success!</h2>
 
           <p>
-            Welcome back, {loginResponse.first_name}! <br />
+            Welcome back, {user.first_name}! <br />
             You have successfully logged in.
             <Link className={classes.link} to="/dashboard">
               Go To Dashboard
@@ -108,7 +106,7 @@ function LoginForm() {
             <br />
             <label htmlFor="password">Password</label>
             <input
-              type="text"
+              type="password"
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -122,9 +120,6 @@ function LoginForm() {
             <Link className={classes.link} to="/signup">
               Sign Up
             </Link>
-            {/* <button>
-          <Link to="/signup">Sign Up</Link>
-        </button> */}
           </span>
         </section>
       )}

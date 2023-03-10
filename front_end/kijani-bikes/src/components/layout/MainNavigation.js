@@ -19,7 +19,7 @@ function MainNavigation() {
           withCredentials: true,
         },
       });
-      console.log(response);
+      console.log(response.status);
     } catch (err) {
       console.log(err);
     }

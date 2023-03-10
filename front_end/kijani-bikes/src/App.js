@@ -21,7 +21,8 @@ import Profile from "./pages/Profile";
 // import Navbar from "./components/ForDash/Navbar";
 import ReserveBike from "./pages/ReserveBike";
 import UnlockBike from "./pages/Unlock";
-import NewMap from "./components/maps/NewMap";
+// import NewMap from "./components/maps/NewMap";
+import Blog from "./pages/Blog";
 
 function App() {
   const [user, setUser] = useState("");
@@ -55,7 +56,7 @@ function App() {
               <Route path="trips" element={<Trip />} />
               <Route path="profile" element={<Profile />} />
 
-              <Route path="blog" element={<NewMap />} />
+              <Route path="blog" element={<Blog />} />
             </Routes>
           </BrowserRouter>
         </UserContext.Provider>

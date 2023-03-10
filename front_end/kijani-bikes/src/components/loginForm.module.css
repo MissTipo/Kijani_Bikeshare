@@ -8,8 +8,14 @@
   /* height: 60vh; */
 }
 
-.container h2 p {
+.container p {
   text-align: center;
+}
+
+.container h2 {
+  text-align: center;
+  margin: 15px auto 25px auto;
+  color: #376e2d;
 }
 
 .link {

@@ -28,18 +28,18 @@ function AboutSection() {
       <div className={classes.team}>
         <h2>Our Team</h2>
         <p>
-          <strong>John Doe</strong> - CEO
+          <strong>Dorine Tipo</strong> - Dev
         </p>
         <p>
-          <strong>Jane Doe</strong> - CTO
+          <strong>Mutiu Falade</strong> - Dev
         </p>
         <p>
-          <strong>John Smith</strong> - COO
+          <strong>Kolapo Obajulwa</strong> - Dev
         </p>
       </div>
-      <p>
+      <button>
         <Link to="/">Back to home</Link>
-      </p>
+      </button>
     </section>
   );
 }
