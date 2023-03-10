@@ -1,16 +1,28 @@
 /* Styling for the Ride component. */
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 600px;
-    padding: 0 20px;
-  }
-    .btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
+}
 
-        width: 300px;
-  }
+.btn {
+  width: 300px;
+  margin: 20px 0;
+}
+
+.container h1 {
+  color: #376e2d;
+  font-size: 1.5rem;
+}
+
+.details p {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+}

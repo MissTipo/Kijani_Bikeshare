@@ -10,37 +10,30 @@ import StartContext from "../context/StartContext";
 function DropdownList() {
   const [startLocation, setStartLocation] = useState("");
   const [endLocation, setEndLocation] = useState("");
-  const { setStart } = useContext(StartContext);
-  // const [ride, setRide] = useState("");
+  const { trip, setTrip } = useContext(StartContext);
 
   //   Handle start location change
   function handleStart(e) {
     e.preventDefault();
     setStartLocation(e.target.value);
-    setStart(e.target.value);
+    setTrip({ ...trip, start: e.target.value });
   }
 
   //   Handle end location change
   function handleEnd(e) {
     setEndLocation(e.target.value);
+    setTrip({ ...trip, end: e.target.value });
   }
 
   //   Handle submit button click
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(startLocation, endLocation);
-
-    const formData = {
-      startLocation: startLocation,
-      endLocation: endLocation,
-    };
 
     // make api call to get start location details
     try {
       const response = await axios.get(
-        "/profile",
-        // `api/v1/station/${startLocation}`,
-        // JSON.stringify(formData),
+        `api/v1/station/${startLocation}`,
+
         {
           headers: {
             "Content-Type": "application/json",
@@ -48,7 +41,7 @@ function DropdownList() {
           },
         }
       );
-      console.log(response);
+      console.log(response.status);
     } catch (err) {
       if (!err.response) {
         console.log("Network Error");
@@ -83,7 +76,7 @@ function DropdownList() {
         <Link to="/reserve">
           <button
             onClick={handleSubmit}
-            disabled={!startLocation}
+            disabled={!startLocation || !endLocation}
             className={classes.btn}
           >
             Start Ride

@@ -5,9 +5,22 @@ import * as IoIcons from "react-icons/io";
 
 export const SidebarData = [
   {
+    title: "Profile",
+    path: "/profile",
+    icon: <AiIcons.AiFillProfile />,
+    cName: "nav-text",
+  },
+
+  {
     title: "Reserve Bike",
     path: "/reserve",
     icon: <AiIcons.AiOutlineSelect />,
+    cName: "nav-text",
+  },
+  {
+    title: "Unlock",
+    path: "/unlock",
+    icon: <FaIcons.FaUnlock />,
     cName: "nav-text",
   },
   {
@@ -26,18 +39,6 @@ export const SidebarData = [
     title: "Trips",
     path: "/trips",
     icon: <FaIcons.FaRoad />,
-    cName: "nav-text",
-  },
-  {
-    title: "Profile",
-    path: "/profile",
-    icon: <AiIcons.AiFillProfile />,
-    cName: "nav-text",
-  },
-  {
-    title: "Unlock",
-    path: "/unlock",
-    icon: <FaIcons.FaUnlock />,
     cName: "nav-text",
   },
 

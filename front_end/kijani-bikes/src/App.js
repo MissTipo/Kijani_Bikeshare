@@ -25,11 +25,11 @@ import NewMap from "./components/maps/NewMap";
 
 function App() {
   const [user, setUser] = useState("");
-  const [start, setStart] = useState("");
+  const [trip, setTrip] = useState({});
 
   return (
     <>
-      <StartContext.Provider value={{ start, setStart }}>
+      <StartContext.Provider value={{ trip, setTrip }}>
         <UserContext.Provider value={{ user, setUser }}>
           <BrowserRouter>
             <Routes>
