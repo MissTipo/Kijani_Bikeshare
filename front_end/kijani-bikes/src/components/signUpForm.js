@@ -211,6 +211,10 @@ function SignupForm() {
                 value={password}
                 required
               />
+              <p className={validPassword ? "offscreen" : "errMsg"}>
+                Password must be at least 8 characters long and contain at least
+                one uppercase letter, one lowercase letter, and one number.
+              </p>
             </label>
             <label htmlFor="matchPassword">
               Confirm Password
@@ -223,6 +227,9 @@ function SignupForm() {
                 value={matchPassword}
                 required
               />
+              <p className={validMatch ? "offscreen" : "errMsg"}>
+                Passwords do not match
+              </p>
             </label>
             <button
               type="submit"
